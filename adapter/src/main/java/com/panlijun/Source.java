@@ -1,4 +1,4 @@
-package com.panlijun.clazz;
+package com.panlijun;
 
 import org.slf4j.Logger;
 

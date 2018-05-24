@@ -1,8 +1,9 @@
-package com.panlijun.clazz;
+package com.panlijun;
 
 /**
  * Targetable接口，拥有方法m1(), m2()
- * 将Source类的功能扩展到本接口
+ *
+ * @author panlijun
  */
 public interface Targetable {
     /**

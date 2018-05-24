@@ -8,6 +8,7 @@
   <modules>
     <module>proxy</module>
     <module>annotation</module>
+      <module>adapter</module>
   </modules>
   <packaging>pom</packaging>
 

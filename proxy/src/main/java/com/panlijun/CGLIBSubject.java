@@ -15,6 +15,11 @@ public class CGLIBSubject {
         return msg;
     }
 
+    public String say2(String msg){
+        log.info("CGI subject says2:{}");
+        return msg;
+    }
+
     public final String finalSay(String msg) {
         log.info("CGI subject final says:{}", msg);
         return msg;

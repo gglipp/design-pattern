@@ -27,17 +27,20 @@ public class SubjectMethodInterceptorTest {
             public int accept(Method method) {
                 if ("say".equals(method.getName())){
                     return 0;
-                } else {
+                } else if("say2".equals(method.getName())){
                     return 1;
+                } else {
+                    return 2;
                 }
             }
         });
-        enhancer.setCallbacks(new Callback[]{new OtherMethodInterceptor(), new SubjectMethodInterceptor()});
+        enhancer.setCallbacks(new Callback[]{new OtherMethodInterceptor(), new SubjectMethodInterceptor(), new NullMethodInterceptor()});
 
 
         CGLIBSubject cglibSubject = (CGLIBSubject) enhancer.create();
         cglibSubject.say("hello CGLIB!");
         cglibSubject.say2("hello cglib2!");
+        cglibSubject.say3("hello cglib3");
         cglibSubject.finalSay("final CGLIB!");
     }
 

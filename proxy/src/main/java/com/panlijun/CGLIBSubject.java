@@ -24,4 +24,8 @@ public class CGLIBSubject {
         log.info("CGI subject final says:{}", msg);
         return msg;
     }
+
+    public void say3(String hello_cglib3) {
+        log.info("CGI subject says3:{}");
+    }
 }

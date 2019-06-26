@@ -16,4 +16,19 @@ public class InterfaceWrapperTest {
         s2.m2();
     }
 
+    @Test
+    public void testPlus(){
+        int x = 5;
+        x += 3.5;
+        System.out.println(x);
+        System.out.println(x + 3.5);
+    }
+
+    @Test
+    public void testBitTrans(){
+        int n = 8;
+        int forthBitFromRight = (n & (1 << 3)) >> 3;
+        System.out.println(forthBitFromRight);
+    }
+
 }

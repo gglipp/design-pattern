@@ -10,6 +10,7 @@
     <module>annotation</module>
       <module>adapter</module>
     <module>singleton</module>
+    <module>strategy</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -45,6 +46,13 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>${slf4j.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.9</version>
     </dependency>
 
   </dependencies>

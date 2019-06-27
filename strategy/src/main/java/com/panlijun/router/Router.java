@@ -1,4 +1,4 @@
-package com.panlijun.strategy;
+package com.panlijun.router;
 
 /**
  * 路由接口，实现具体路由功能

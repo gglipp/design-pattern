@@ -1,4 +1,4 @@
-package com.panlijun.strategy;
+package com.panlijun.router;
 
 /**
  * upflow-merchant router impl

@@ -14,6 +14,7 @@ public class MessySolution {
     public void messyRouting(){
 
         Condition condition = new Condition();
+
         if (condition.getFlow() == 0) {
             if (StringUtils.isBlank(condition.getMerchantCode())) {
                 log.info("routing '/upflow'");

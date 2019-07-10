@@ -3,7 +3,7 @@ package com.panlijun;
 /**
  * @author panlijun
  */
-public class Singleton {
+public class Singleton extends Parent{
     private Singleton(){}
 
     private static class SingletonFactory{

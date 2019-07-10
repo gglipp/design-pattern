@@ -29,4 +29,16 @@ public class SingletonTest {
         NonSingleton nonSingleton1 = new NonSingleton();
         Assert.assertEquals(nonSingleton, nonSingleton1);
     }
+
+    @Test
+    public void inheritTest(){
+        Singleton instance = Singleton.getInstance();
+        log.info(String.valueOf(instance.hashCode()));
+        log.info(instance.getParentHashcode());
+        Singleton instance1 = Singleton.getInstance();
+        log.info(String.valueOf(instance1.hashCode()));
+        log.info(instance1.getParentHashcode());
+        log.info(String.valueOf(new NonSingleton().hashCode()));
+        log.info(String.valueOf(new NonSingleton().hashCode()));
+    }
 }

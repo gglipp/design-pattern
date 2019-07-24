@@ -28,6 +28,7 @@ public class SubjectHandler implements InvocationHandler {
         if(INVOKE.equals(method.getName())) {
             log.info("请求参数:{}", Arrays.toString(args));
         }
-        return method.invoke(subject, args);
+        throw new Exception("error");
+//        return method.invoke(subject, args);
     }
 }

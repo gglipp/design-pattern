@@ -11,6 +11,7 @@
       <module>adapter</module>
     <module>singleton</module>
     <module>strategy</module>
+      <module>http</module>
   </modules>
   <packaging>pom</packaging>
 

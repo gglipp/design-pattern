@@ -16,6 +16,7 @@ public class OtherMethodInterceptor implements MethodInterceptor{
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
         log.info("this is another interceptor");
+//        throw new Exception("error");
         return methodProxy.invokeSuper(o, objects);
     }
 }

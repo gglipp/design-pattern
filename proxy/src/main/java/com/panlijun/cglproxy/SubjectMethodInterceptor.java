@@ -19,6 +19,7 @@ public class SubjectMethodInterceptor implements MethodInterceptor{
     @Override
     public Object intercept(Object o, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
         log.info("CGLIB 代理方法。 请求参数:{}", Arrays.toString(args));
+//        throw new Exception("error");
         return methodProxy.invokeSuper(o, args);
     }
 }

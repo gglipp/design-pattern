@@ -1,5 +1,7 @@
 package com.panlijun;
 
+import sun.reflect.generics.reflectiveObjects.LazyReflectiveObjectGenerator;
+
 public class Parent {
     private String id = "0001";
 

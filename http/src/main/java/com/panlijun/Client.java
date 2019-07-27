@@ -54,26 +54,15 @@ public class Client {
     }
 
 
-    private HttpClient createDefaultHttpClient(){
+    public CloseableHttpClient createDefaultHttpClient(){
         return HttpClients.createDefault();
     }
 
     public CloseableHttpClient createSSLHttpClient() throws NoSuchAlgorithmException, KeyStoreException, KeyManagementException {
-        SSLContext sslContext = SSLContexts.custom().loadTrustMaterial(null, new TrustStrategy() {
-            @Override
-            public boolean isTrusted(X509Certificate[] chain, String authType) throws CertificateException {
-                return true;
-            }
-        }).build();
-        SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslContext, SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+        SSLContext sslContext = SSLContexts.custom().loadTrustMaterial(null, (chain, authType) -> true).build();
+//        SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslContext, SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
 
-//        return HttpClients.custom().setSSLContext(sslContext).build();
-//        return HttpClients.custom().setSSLSocketFactory(new SSLConnectionSocketFactory(sslContext)).build();
-        return HttpClients.custom().setSSLSocketFactory(sslsf).build();
+        return HttpClients.custom().setSSLSocketFactory(new SSLConnectionSocketFactory(sslContext)).build();
     }
-
-
-
-
 
 }

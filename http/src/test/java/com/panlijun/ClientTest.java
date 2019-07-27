@@ -18,6 +18,7 @@ import java.net.URISyntaxException;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
+import static org.assertj.core.api.Assertions.*;
 
 public class ClientTest {
 
@@ -35,16 +36,10 @@ public class ClientTest {
         String msg = httpGet.getURI().toString();
         logger.info(msg);
 
-        try (CloseableHttpClient client = new Client().createSSLHttpClient()) {
+        try (CloseableHttpClient client = new Client().createDefaultHttpClient()) {
             CloseableHttpResponse response = client.execute(httpGet);
             String s = EntityUtils.toString(response.getEntity());
             logger.info(s);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (KeyStoreException e) {
-            e.printStackTrace();
-        } catch (KeyManagementException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

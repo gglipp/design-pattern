@@ -1,5 +1,8 @@
 package com.panlijun.startup;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import com.panlijun.startup.module.BillingModule;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
@@ -52,4 +55,19 @@ public class BillingServiceTest {
 //        CreditCardProcessorFactory.setInstance(null);
 //
 //    }
+
+    @Test
+    public void should_get_successful_receipt_if_charge_successfully_using_guice(){
+       //given
+        Injector injector = Guice.createInjector(new BillingModule());
+        BillingService billingService = injector.getInstance(BillingService.class);
+
+        //when
+        Receipt receipt = billingService.chargeOrder(order, creditCard);
+
+        //then
+        Assertions.assertThat(receipt.getMessage()).isEqualTo(Message.CHARGE_SUCCESSFULLY);
+
+    }
+
 }

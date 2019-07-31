@@ -1,5 +1,7 @@
 package com.panlijun.startup;
 
+import com.google.inject.Inject;
+
 /**
  * @author panlijun
  */
@@ -7,6 +9,7 @@ public class RealBillingService implements BillingService {
     private final CreditCardProcessor processor;
     private final TransactionLog transactionLog;
 
+    @Inject
     public RealBillingService(CreditCardProcessor processor, TransactionLog transactionLog) {
         this.processor = processor;
         this.transactionLog = transactionLog;

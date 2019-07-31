@@ -7,8 +7,11 @@ public class RealBillingService implements BillingService {
     @Override
     public Receipt chargeOrder(PizzaOrder order, CreditCard creditCard) {
 
-        CreditCardProcessor processor = new PaypayCreditCardProcessor();
-        TransactionLog transactionLog = new DatabaseTransactionLog();
+//        CreditCardProcessor processor = new PaypayCreditCardProcessor();
+//        TransactionLog transactionLog = new DatabaseTransactionLog();
+
+        CreditCardProcessor processor = CreditCardProcessorFactory.getInstance();
+        TransactionLog transactionLog = TransactionLogFactory.getInstance();
 
         try {
             ChargeResult result = processor.charge(creditCard, order.getAmount());

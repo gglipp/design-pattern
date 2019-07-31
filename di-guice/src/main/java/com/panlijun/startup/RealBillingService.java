@@ -4,14 +4,25 @@ package com.panlijun.startup;
  * @author panlijun
  */
 public class RealBillingService implements BillingService {
+    private final CreditCardProcessor processor;
+    private final TransactionLog transactionLog;
+
+    public RealBillingService(CreditCardProcessor processor, TransactionLog transactionLog) {
+        this.processor = processor;
+        this.transactionLog = transactionLog;
+    }
+
     @Override
     public Receipt chargeOrder(PizzaOrder order, CreditCard creditCard) {
-
+//part 1
 //        CreditCardProcessor processor = new PaypayCreditCardProcessor();
 //        TransactionLog transactionLog = new DatabaseTransactionLog();
 
-        CreditCardProcessor processor = CreditCardProcessorFactory.getInstance();
-        TransactionLog transactionLog = TransactionLogFactory.getInstance();
+        //part 2
+//        CreditCardProcessor processor = CreditCardProcessorFactory.getInstance();
+//        TransactionLog transactionLog = TransactionLogFactory.getInstance();
+
+        //part 3
 
         try {
             ChargeResult result = processor.charge(creditCard, order.getAmount());

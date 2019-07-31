@@ -1,8 +1,6 @@
 package com.panlijun.startup;
 
 import org.assertj.core.api.Assertions;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 public class BillingServiceTest {
@@ -13,12 +11,12 @@ public class BillingServiceTest {
     private final TransactionLog transactionLog = new DatabaseTransactionLog();
     private final CreditCardProcessor processor = new PaypayCreditCardProcessor();
 
-    @Before
-    public void setUp() {
-        TransactionLogFactory.setInstance(transactionLog);
-        CreditCardProcessorFactory.setInstance(processor);
-
-    }
+//    @Before
+//    public void setUp() {
+//        TransactionLogFactory.setInstance(transactionLog);
+//        CreditCardProcessorFactory.setInstance(processor);
+//
+//    }
 
 
 //    @Test
@@ -39,8 +37,8 @@ public class BillingServiceTest {
     @Test
     public void should_get_successful_receipt_if_charge_successfully_with_factory(){
        //given
-        BillingService billingService = new RealBillingService();
-
+//        BillingService billingService = new RealBillingService();
+        BillingService billingService = new RealBillingService(processor, transactionLog);
         //when
         Receipt receipt = billingService.chargeOrder(order, creditCard);
 
@@ -48,10 +46,10 @@ public class BillingServiceTest {
         Assertions.assertThat(receipt.getMessage()).isEqualTo(Message.CHARGE_SUCCESSFULLY);
     }
 
-    @After
-    public void tearDown() {
-        TransactionLogFactory.setInstance(null);
-        CreditCardProcessorFactory.setInstance(null);
-
-    }
+//    @After
+//    public void tearDown() {
+//        TransactionLogFactory.setInstance(null);
+//        CreditCardProcessorFactory.setInstance(null);
+//
+//    }
 }

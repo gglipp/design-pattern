@@ -30,9 +30,14 @@ public class IntersectionTest {
     @Test
     public void should_intersection(){
 
+        // 0000 0001
         byte a = 1;
+        // 0000 0011
         byte b = 3;
-        System.out.println(a^b);
+
+        //结果是1
+        // 0000 0001
+        System.out.println(a&b);
 
     }
 }

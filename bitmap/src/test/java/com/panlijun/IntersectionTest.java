@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class IntersectionTest {
@@ -20,11 +21,18 @@ public class IntersectionTest {
         datum.add(new MyData(3));
         datum.add(new MyData(4));
 
+        nums = Arrays.asList(3, 4, 5, 6);
 
+        System.out.println(datum);
+        System.out.println(nums);
     }
 
     @Test
     public void should_intersection(){
+
+        byte a = 1;
+        byte b = 3;
+        System.out.println(a^b);
 
     }
 }

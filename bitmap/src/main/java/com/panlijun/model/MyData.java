@@ -4,6 +4,14 @@ public class MyData {
     private int id;
     private String name;
 
+    @Override
+    public String toString() {
+        return "MyData{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
     public MyData(int id) {
         this.id = id;
     }

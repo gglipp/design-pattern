@@ -1,6 +1,6 @@
 package com.panlijun.model;
 
-public class MyData {
+public class MyData implements Comparable<MyData>{
     private int id;
     private String name;
 
@@ -33,5 +33,11 @@ public class MyData {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+
+    @Override
+    public int compareTo(MyData o) {
+        return o.getId() - this.id;
     }
 }

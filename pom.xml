@@ -13,6 +13,7 @@
         <module>strategy</module>
         <module>http</module>
         <module>di-guice</module>
+        <module>bitmap</module>
     </modules>
     <packaging>pom</packaging>
 
